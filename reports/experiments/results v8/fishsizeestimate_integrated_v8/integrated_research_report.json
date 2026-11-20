@@ -1,0 +1,27 @@
+{
+  "project": "FishSizeEstimate",
+  "available_ros_bags": 11,
+  "completed_training_bags": 11,
+  "training_image_messages": 10405,
+  "optimizer_steps": 331,
+  "decoded_failures": 0,
+  "real_stereo_pairs_previewed": 11,
+  "stereo_timestamp_qa_bags": 11,
+  "calibration_pair_candidates": 4,
+  "independent_confirmed_length_regressor": false,
+  "metric_evaluation_status": "NOT_EVALUATED_NO_VERIFIED_ANNOTATIONS",
+  "metric_mae_cm": null,
+  "metric_rmse_cm": null,
+  "dataset_recovery": "partial recovery",
+  "limitations": [
+    "Dataset B source archive was truncated",
+    "One Dataset B recording could not be recovered",
+    "Recovered Dataset B recordings passed ZIP CRC checks",
+    "Full ROS message integrity has not yet been verified",
+    "All recovered Dataset A recordings correspond to Fish 0 only",
+    "Dataset B requires per-frame multi-fish association",
+    "Stereo receive-time matching is not proof of exposure synchronization",
+    "Calibrated metric stereo and 3D nose/tail measurements not independently verified",
+    "A representation encoder is not a fish-size regressor"
+  ]
+}

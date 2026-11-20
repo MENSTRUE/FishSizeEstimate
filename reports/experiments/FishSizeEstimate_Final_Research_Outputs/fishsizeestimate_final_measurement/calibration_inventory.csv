@@ -1,0 +1,9 @@
+source,session,side,K_valid,P_valid,width,height
+dataset_to_zenodo/calibrations/dataset_2/2025_08_21/right.yaml,dataset_to_zenodo/calibrations/dataset_2/2025_08_21,right,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2024_11_28/left.yaml,dataset_to_zenodo/calibrations/dataset_1/2024_11_28,left,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2025_05_08/left.yaml,dataset_to_zenodo/calibrations/dataset_1/2025_05_08,left,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2025_05_08/right.yaml,dataset_to_zenodo/calibrations/dataset_1/2025_05_08,right,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_2/2025_08_21/left.yaml,dataset_to_zenodo/calibrations/dataset_2/2025_08_21,left,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2024_11_12/left.yaml,dataset_to_zenodo/calibrations/dataset_1/2024_11_12,left,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2024_11_28/right.yaml,dataset_to_zenodo/calibrations/dataset_1/2024_11_28,right,True,True,2048,1536
+dataset_to_zenodo/calibrations/dataset_1/2024_11_12/right.yaml,dataset_to_zenodo/calibrations/dataset_1/2024_11_12,right,True,True,2048,1536

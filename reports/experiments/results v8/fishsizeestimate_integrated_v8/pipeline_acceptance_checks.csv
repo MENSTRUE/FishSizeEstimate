@@ -1,0 +1,10 @@
+criterion,passed
+source_bags_11,True
+visual_pretraining_optimizer_steps_positive,True
+full_available_bag_traversal,True
+no_frame_decode_failures,True
+physical_ground_truth_9_individuals,True
+recording_metadata_join_nonempty,True
+real_stereo_preview_nonempty,True
+automatic_candidate_qa_written,True
+verified_cm_metrics_exist,False

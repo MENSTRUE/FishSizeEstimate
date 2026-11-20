@@ -1,0 +1,12 @@
+bag,dataset,signature,status,fishes_present,dataset_type
+11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,A,2024-11-12_10-58-20_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,A,2024-11-12_11-00-27_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,A,2024-11-12_10-54-07_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,A,2024-11-12_11-08-39_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,A,2024-11-12_10-51-31_1,MATCHED,"Fish 0 (31,5cm)",single_fish
+697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,A,2024-11-12_10-48-44_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,B,2025-08-21_13-05-55_0,MATCHED,Red Tag (29.1cm),single_fish
+776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,A,2024-11-12_10-44-11_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,B,2025-08-21_10-37-15_1,MATCHED,Red Tag (29.1cm),single_fish
+943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,A,2024-11-12_11-37-10_0,MATCHED,"Fish 0 (31,5cm)",single_fish
+bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,A,2024-11-12_11-10-51_0,MATCHED,"Fish 0 (31,5cm)",single_fish

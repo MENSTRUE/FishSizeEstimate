@@ -1,0 +1,9 @@
+{
+  "metric_validation_status": "NOT_EVALUATED",
+  "n_verified_geometry_rows": 0,
+  "unique_fish_ids": 0,
+  "within_sample_geometry_mae_cm": null,
+  "heldout_fish_mae_cm": null,
+  "heldout_fish_rmse_cm": null,
+  "reason": "No accepted human-verified stereo landmark pairs and physical calibration"
+}

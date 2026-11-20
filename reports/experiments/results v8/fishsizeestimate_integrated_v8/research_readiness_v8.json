@@ -1,0 +1,32 @@
+{
+  "project": "FishSizeEstimate",
+  "pipeline": "full available ROS-frame self-supervised pretraining + stereo evidence",
+  "source_bag_count": 11,
+  "completed_bags": 11,
+  "train_frames": 10405,
+  "optimizer_steps": 331,
+  "stereo_timestamp_diagnostic_only": true,
+  "cm_length_model_trained": false,
+  "length_mae_cm": null,
+  "length_rmse_cm": null,
+  "model_evaluation_status": "NOT EVALUATED ON INDEPENDENT FISH LENGTH LABELS",
+  "source_dataset_status": "partial recovery",
+  "readiness": {
+    "all_11_available_bags_stream_completed": true,
+    "image_decode_zero_failures": true,
+    "actual_optimizer_updates": true,
+    "stereo_bag_timestamp_proximity_measured_for_every_bag": true,
+    "physical_baseline_units_verified": false,
+    "camera_rectification_verified": false,
+    "fish_3D_nose_tail_points_annotated_and_verified": false,
+    "independent_fish_id_heldout_cm_evaluation": false
+  },
+  "limitations": [
+    "Only 11 available recovered ROS bags were processed, not missing upstream recordings",
+    "Available Dataset A recordings all correspond to Fish 0 (one length label)",
+    "Two available Dataset B recordings are multi-fish",
+    "Timestamp proximity alone is not synchronized stereo geometry",
+    "No statistically defensible held-out cm estimation evaluation yet",
+    "Check original dataset, checkpoint and photograph licenses before publishing"
+  ]
+}

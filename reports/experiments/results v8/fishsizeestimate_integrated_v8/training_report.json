@@ -1,0 +1,18 @@
+{
+  "task": "self_supervised_visual_pretraining",
+  "fish_length_regression": "NOT TRAINED",
+  "source_bags": 11,
+  "fully_traversed_bags": 11,
+  "decoded_images": 10405,
+  "trained_images": 10405,
+  "decode_failures": 0,
+  "optimizer_steps": 331,
+  "full_available_dataset_processed": true,
+  "missing_source_recording": "Dataset B source archive truncated: unavailable recordings not trainable",
+  "limitations": [
+    "No validated per-frame fish length labels for all frames",
+    "Not a centimetre prediction model",
+    "All Dataset A available bags from one fish identity; split by frames would leak",
+    "ROS stereo geometry and synchronization not yet validated"
+  ]
+}

@@ -1,0 +1,1 @@
+pair_id,bag,fish_id,dataset,left_nose_x,left_nose_y,right_nose_x,right_nose_y,left_tail_x,left_tail_y,right_tail_x,right_tail_y,calibration_session,baseline_m_verified,rectified_verified,identity_verified,endpoint_verified,ground_truth_cm,verification_reference

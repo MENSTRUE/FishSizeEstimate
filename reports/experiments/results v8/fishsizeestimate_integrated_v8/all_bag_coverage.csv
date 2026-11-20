@@ -1,0 +1,12 @@
+bag,dataset,status,image_events_seen,decoded_images,trained_images,decode_failures,left_images,right_images,duration_s,error
+11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,A,complete,970,970,970,0,485,485,59.81,
+14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,A,complete,632,632,632,0,316,316,158.03,
+4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,A,complete,969,969,969,0,484,485,247.03,
+639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,A,complete,970,970,970,0,485,485,248.86,
+6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,A,complete,1105,1105,1105,0,552,553,299.47,
+697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,A,complete,1334,1334,1334,0,667,667,333.6,
+6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,B,complete,1231,1231,1231,0,615,616,275.24,
+776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,A,complete,847,847,847,0,423,424,217.99,
+83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,B,complete,407,407,407,0,204,203,91.46,
+943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,A,complete,970,970,970,0,485,485,241.34,
+bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,A,complete,970,970,970,0,485,485,233.25,

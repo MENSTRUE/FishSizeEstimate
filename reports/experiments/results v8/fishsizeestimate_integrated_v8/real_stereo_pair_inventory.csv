@@ -1,0 +1,12 @@
+bag,status,delta_ms,left_topic,right_topic,left_h,left_w,right_h,right_w,preview
+11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,PAIR_FOUND,2.096895,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_00.jpg
+14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,PAIR_FOUND,3.148423,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_01.jpg
+4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,PAIR_FOUND,3.459396,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_02.jpg
+639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,PAIR_FOUND,3.528148,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_03.jpg
+6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,PAIR_FOUND,2.267192,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_04.jpg
+697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,PAIR_FOUND,1.124184,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_05.jpg
+6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,PAIR_FOUND,0.685681,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_06.jpg
+776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,PAIR_FOUND,1.084256,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_07.jpg
+83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,PAIR_FOUND,2.475554,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_08.jpg
+943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,PAIR_FOUND,3.568796,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_09.jpg
+bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,PAIR_FOUND,4.594122,/stereo_ch3/left/image_raw/compressed,/stereo_ch3/right/image_raw/compressed,1536,2048,1536,2048,stereo_pair_10.jpg

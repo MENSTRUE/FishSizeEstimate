@@ -1,0 +1,9 @@
+original_path,parsed,fx_px,fy_px,P03_over_fx_candidate,warning
+dataset_to_zenodo/calibrations/dataset_2/2025_08_21/right.yaml,True,1425.854786,1424.054636,0.12038197845798763,
+dataset_to_zenodo/calibrations/dataset_1/2024_11_28/left.yaml,True,1433.86998,1429.73555,-0.0,
+dataset_to_zenodo/calibrations/dataset_1/2025_05_08/left.yaml,True,1442.503901,1439.212635,-0.0,
+dataset_to_zenodo/calibrations/dataset_1/2025_05_08/right.yaml,True,1439.045971,1435.995467,0.12033760527706718,
+dataset_to_zenodo/calibrations/dataset_2/2025_08_21/left.yaml,True,1427.964944,1425.488921,-0.0,
+dataset_to_zenodo/calibrations/dataset_1/2024_11_12/left.yaml,True,1433.86998,1429.73555,-0.0,
+dataset_to_zenodo/calibrations/dataset_1/2024_11_28/right.yaml,True,1428.43596,1425.57999,0.12235610392493328,
+dataset_to_zenodo/calibrations/dataset_1/2024_11_12/right.yaml,True,1428.43596,1425.57999,0.12235610392493328,

@@ -1,0 +1,9 @@
+criterion,verified
+all_11_available_bags_stream_completed,True
+image_decode_zero_failures,True
+actual_optimizer_updates,True
+stereo_bag_timestamp_proximity_measured_for_every_bag,True
+physical_baseline_units_verified,False
+camera_rectification_verified,False
+fish_3D_nose_tail_points_annotated_and_verified,False
+independent_fish_id_heldout_cm_evaluation,False

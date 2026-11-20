@@ -1,0 +1,2 @@
+name,source,bytes,root_type,top_keys,schema_lines
+22979fe6cf08_model_tracking_annotations.json,dataset_to_zenodo/gt_annotations_and_samples/model_tracking_annotations.json,9873,dict,"['metadata', 'single_fish_tracks', 'multiple_fish_tracks']",553

@@ -1,0 +1,12 @@
+bag_index,name,source_path,dataset,size_gib,magic_valid
+0,11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/10_58_20/stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,A,2.1454,True
+1,14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/11_00_27/stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,A,1.4042,True
+2,4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/10_54_07/stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,A,2.144,True
+3,639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/11_08_39/stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,A,2.0986,True
+4,6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/10_48_44/stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,A,2.4791,True
+5,697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/10_48_44/stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,A,2.9737,True
+6,6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,bagfiles/Dataset_B/multiple_fish/retalls_compresssed/r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,B,2.4971,True
+7,776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/10_44_11/stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,A,1.9837,True
+8,83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,bagfiles/Dataset_B/multiple_fish/retalls_compresssed/r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,B,0.8554,True
+9,943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/11_37_10/stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,A,2.0757,True
+10,bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,bagfiles/Dataset_A/2024_11_12/2024_11_12/single_fish/11_10_50/stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,A,2.0966,True

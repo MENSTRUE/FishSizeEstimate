@@ -1,0 +1,12 @@
+bag,status,reason,left_long_axis_px,baseline_candidate_unknown_units,calibration_session
+11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,IMAGE_PIXEL_SPAN_ONLY,"Endpoint correspondence, rectification and baseline units unverified",466.4737124902588,0.12235610392493328,dataset_to_zenodo/calibrations/dataset_1/2024_11_12
+6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,
+bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,NOT_ESTIMABLE,no accepted bilateral automatic candidate,,,

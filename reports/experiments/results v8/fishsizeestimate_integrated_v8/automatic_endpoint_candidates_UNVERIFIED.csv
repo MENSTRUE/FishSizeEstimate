@@ -1,0 +1,12 @@
+bag,delta_ms,proposal_status,source,review_png,left_score,right_score,left_end_a_x,left_end_a_y,left_end_b_x,left_end_b_y,right_end_a_x,right_end_a_y,right_end_b_x,right_end_b_y
+11017c8532e5_stereo_camera_images_2024-11-12-10-58-20_0_compressed.bag,2.096895,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_00.png,,,,,,,,,,
+14f5cd7cd8f7_stereo_camera_images_2024-11-12-11-00-27_0_compressed.bag,3.148423,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_01.png,,,,,,,,,,
+4efb770e7d98_stereo_camera_images_2024-11-12-10-54-07_0_compressed.bag,3.459396,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_02.png,,,,,,,,,,
+639d8b0d6198_stereo_camera_images_2024-11-12-11-08-39_0_compressed.bag,3.528148,CANDIDATE_REVIEW_REQUIRED,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_03.png,0.5693495754618334,0.5641594611660823,1469.8666666666666,913.0666666666667,1930.6666666666667,985.6,1166.9333333333334,904.5333333333333,1629.8666666666666,985.6
+6409f636e6f9_stereo_camera_images_2024-11-12-10-51-31_1_compressed.bag,2.267192,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_04.png,,,,,,,,,,
+697d94299f75_stereo_camera_images_2024-11-12-10-48-44_0_compressed.bag,1.124184,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_05.png,,,,,,,,,,
+6b771e0b4b26_r_stereo_camera_images_2025-08-21-13-05-55_0_compressed.bag,0.685681,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_06.png,,,,,,,,,,
+776e174bb797_stereo_camera_images_2024-11-12-10-44-11_0_compressed.bag,1.084256,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_07.png,,,,,,,,,,
+83b92bcd3ce0_r_stereo_camera_images_2025-08-21-10-37-15_1_compressed.bag,2.475554,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_08.png,,,,,,,,,,
+943687d73044_stereo_camera_images_2024-11-12-11-37-10_0_compressed.bag,3.568796,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_09.png,,,,,,,,,,
+bd5fc5b9bd5b_stereo_camera_images_2024-11-12-11-10-51_0_compressed.bag,4.594122,ABSTAIN,automatic_unverified_contrast_heuristic,automatic_endpoint_candidate_10.png,,,,,,,,,,

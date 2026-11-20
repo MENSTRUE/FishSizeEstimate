@@ -1,0 +1,30 @@
+{
+  "project": "FishSizeEstimate",
+  "source_ros_bags_available": 11,
+  "source_recovery": "partial recovery",
+  "v8_pretraining": "COMPLETED_IN_PRIOR_KAGGLE_EXECUTION_NOT_RETRAINED_HERE",
+  "actual_stereo_pairs_exported": 66,
+  "tracking_annotation_files_inspected": 1,
+  "tracking_nodes_with_recognized_keys": 0,
+  "automatic_mask_or_roi_proposals": 60,
+  "automatic_proposals_are_verified_fish": false,
+  "verified_length_records": 0,
+  "validated_heldout_length_mae_cm": null,
+  "physical_scale_status": "NOT_VERIFIED",
+  "metric_summary": {
+    "metric_validation_status": "NOT_EVALUATED",
+    "n_verified_geometry_rows": 0,
+    "unique_fish_ids": 0,
+    "within_sample_geometry_mae_cm": null,
+    "heldout_fish_mae_cm": null,
+    "heldout_fish_rmse_cm": null,
+    "reason": "No accepted human-verified stereo landmark pairs and physical calibration"
+  },
+  "data_limitations": [
+    "Recovered Dataset A comprises only Fish 0 recordings",
+    "Dataset B multiple fish require explicit per-frame identity",
+    "Source Dataset B archive incomplete",
+    "Tracking annotations might not encode nose/tail stereo point labels",
+    "Source projection translation units and image rectification need independent confirmation"
+  ]
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "name": "MODEL_CARD.md",
+    "bytes": 1034
+  },
+  {
+    "name": "README.md",
+    "bytes": 1326
+  },
+  {
+    "name": "actual_ros_preview.png",
+    "bytes": 356965
+  },
+  {
+    "name": "all_bag_coverage.csv",
+    "bytes": 1367
+  },
+  {
+    "name": "automatic_endpoint_candidate_00.png",
+    "bytes": 616926
+  },
+  {
+    "name": "automatic_endpoint_candidate_01.png",
+    "bytes": 622307
+  },
+  {
+    "name": "automatic_endpoint_candidate_02.png",
+    "bytes": 640059
+  },
+  {
+    "name": "automatic_endpoint_candidate_03.png",
+    "bytes": 636796
+  },
+  {
+    "name": "automatic_endpoint_candidate_04.png",
+    "bytes": 630549
+  },
+  {
+    "name": "automatic_endpoint_candidate_05.png",
+    "bytes": 676132
+  },
+  {
+    "name": "automatic_endpoint_candidate_06.png",
+    "bytes": 602744
+  },
+  {
+    "name": "automatic_endpoint_candidate_07.png",
+    "bytes": 860746
+  },
+  {
+    "name": "automatic_endpoint_candidate_08.png",
+    "bytes": 589637
+  },
+  {
+    "name": "automatic_endpoint_candidate_09.png",
+    "bytes": 608524
+  },
+  {
+    "name": "automatic_endpoint_candidate_10.png",
+    "bytes": 615215
+  },
+  {
+    "name": "automatic_endpoint_candidates_UNVERIFIED.csv",
+    "bytes": 2266
+  },
+  {
+    "name": "calibration_qa.csv",
+    "bytes": 895
+  },
+  {
+    "name": "calibration_stereo_pair_candidates.csv",
+    "bytes": 519
+  },
+  {
+    "name": "embedding_similarity_preview.png",
+    "bytes": 37409
+  },
+  {
+    "name": "fish_endpoint_annotations_TEMPLATE.csv",
+    "bytes": 244
+  },
+  {
+    "name": "input_bag_inventory.csv",
+    "bytes": 2323
+  },
+  {
+    "name": "integrated_research_report.json",
+    "bytes": 1102
+  },
+  {
+    "name": "latest_checkpoint.pt",
+    "bytes": 6609928
+  },
+  {
+    "name": "pipeline_acceptance_checks.csv",
+    "bytes": 331
+  },
+  {
+    "name": "progress.json",
+    "bytes": 333318
+  },
+  {
+    "name": "readiness_v8.csv",
+    "bytes": 361
+  },
+  {
+    "name": "real_stereo_pair_inventory.csv",
+    "bytes": 2362
+  },
+  {
+    "name": "recording_ground_truth_join.csv",
+    "bytes": 1772
+  },
+  {
+    "name": "relative_geometry_diagnostics_NOT_CM.csv",
+    "bytes": 1647
+  },
+  {
+    "name": "research_readiness_v8.json",
+    "bytes": 1389
+  },
+  {
+    "name": "self_supervised_training_loss.png",
+    "bytes": 144543
+  },
+  {
+    "name": "stereo_pair_00.jpg",
+    "bytes": 420767
+  },
+  {
+    "name": "stereo_pair_01.jpg",
+    "bytes": 445224
+  },
+  {
+    "name": "stereo_pair_02.jpg",
+    "bytes": 435034
+  },
+  {
+    "name": "stereo_pair_03.jpg",
+    "bytes": 437429
+  },
+  {
+    "name": "stereo_pair_04.jpg",
+    "bytes": 433224
+  },
+  {
+    "name": "stereo_pair_05.jpg",
+    "bytes": 444944
+  },
+  {
+    "name": "stereo_pair_06.jpg",
+    "bytes": 411995
+  },
+  {
+    "name": "stereo_pair_07.jpg",
+    "bytes": 529688
+  },
+  {
+    "name": "stereo_pair_08.jpg",
+    "bytes": 419175
+  },
+  {
+    "name": "stereo_pair_09.jpg",
+    "bytes": 422466
+  },
+  {
+    "name": "stereo_pair_10.jpg",
+    "bytes": 426592
+  },
+  {
+    "name": "stereo_raw_disparity_diagnostic.png",
+    "bytes": 849263
+  },
+  {
+    "name": "stereo_timestamp_p95.png",
+    "bytes": 87731
+  },
+  {
+    "name": "stereo_timestamp_qa.csv",
+    "bytes": 1559
+  },
+  {
+    "name": "train_steps.csv",
+    "bytes": 31946
+  },
+  {
+    "name": "training_report.json",
+    "bytes": 678
+  },
+  {
+    "name": "visual_encoder_weights.pt",
+    "bytes": 2206085
+  }
+]
