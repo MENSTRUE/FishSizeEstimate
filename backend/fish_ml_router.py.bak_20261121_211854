@@ -1,0 +1,171 @@
+from pathlib import Path
+from functools import lru_cache
+import os
+
+import cv2
+import numpy as np
+from fastapi import APIRouter, UploadFile, File, HTTPException
+
+router = APIRouter(prefix="/api/v1/ml", tags=["Fish ML"])
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_MODEL = (
+    ROOT / "models" / "fish_segmenter_v11"
+    / "best_fish_segmenter.pt"
+)
+
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+MAX_IMAGE_PIXELS = 25_000_000
+
+
+def model_path():
+    configured = os.getenv("FISH_SEGMENTER_PATH")
+    return Path(configured) if configured else DEFAULT_MODEL
+
+
+@lru_cache(maxsize=1)
+def load_model():
+    from ultralytics import YOLO
+
+    path = model_path()
+
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"Fish segmenter checkpoint missing: {path}"
+        )
+
+    model = YOLO(str(path))
+
+    if model.task != "segment":
+        raise RuntimeError(
+            "Checkpoint does not contain a segmentation model"
+        )
+
+    return model
+
+
+@router.get("/health")
+def fish_ml_health():
+    path = model_path()
+
+    return {
+        "status": "ready" if path.is_file() else "model_missing",
+        "model": "FishSizeEstimate SFISHTRACK V11",
+        "model_path": str(path),
+        "checkpoint_exists": path.is_file(),
+        "task": "instance_segmentation",
+        "physical_length_cm_supported": False,
+    }
+
+
+@router.post("/segment")
+async def segment_fish(
+    image: UploadFile = File(...),
+    conf: float = 0.15,
+):
+    if not 0.01 <= conf <= 0.95:
+        raise HTTPException(
+            status_code=422,
+            detail="conf must be between 0.01 and 0.95",
+        )
+
+    if image.content_type not in (
+        "image/jpeg", "image/png", "image/webp"
+    ):
+        raise HTTPException(
+            status_code=415,
+            detail="Only JPEG, PNG or WebP is supported",
+        )
+
+    content = await image.read(MAX_UPLOAD_BYTES + 1)
+
+    if len(content) > MAX_UPLOAD_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail="Image too large (maximum 10 MB)",
+        )
+
+    frame = cv2.imdecode(
+        np.frombuffer(content, dtype=np.uint8),
+        cv2.IMREAD_COLOR,
+    )
+
+    if frame is None:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid image",
+        )
+
+    height, width = frame.shape[:2]
+
+    if height * width > MAX_IMAGE_PIXELS:
+        raise HTTPException(
+            status_code=413,
+            detail="Image dimensions too large",
+        )
+
+    try:
+        model = load_model()
+        result = model.predict(
+            source=frame,
+            conf=conf,
+            imgsz=512,
+            device="cpu",
+            retina_masks=True,
+            verbose=False,
+        )[0]
+    except FileNotFoundError as exc:
+        raise HTTPException(
+            status_code=503, detail=str(exc)
+        )
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Segmentation failed: {type(exc).__name__}",
+        )
+
+    objects = []
+
+    if result.boxes is not None:
+        for idx, box in enumerate(result.boxes):
+            coords = [
+                round(float(v), 2)
+                for v in box.xyxy[0].tolist()
+            ]
+
+            polygon = []
+
+            if (
+                result.masks is not None
+                and idx < len(result.masks.xy)
+            ):
+                polygon = [
+                    [round(float(x), 2), round(float(y), 2)]
+                    for x, y in result.masks.xy[idx].tolist()
+                ]
+
+            objects.append({
+                "class": "fish",
+                "confidence": round(
+                    float(box.conf[0]), 4
+                ),
+                "bbox_xyxy": coords,
+                "polygon_xy": polygon,
+            })
+
+    return {
+        "model": "SFISHTRACK V11 YOLO11n-seg",
+        "method": "trained_instance_segmentation",
+        "frame": {
+            "width": width,
+            "height": height,
+        },
+        "fish_count": len(objects),
+        "objects": objects,
+        "physical_length_cm": None,
+        "calibrated": False,
+        "warning": (
+            "Segmentation is experimental. "
+            "No calibrated physical length is available."
+        ),
+    }

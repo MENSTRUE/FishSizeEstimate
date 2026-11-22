@@ -1,0 +1,74 @@
+[
+  {
+    "image": "video041_000245.png",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_00_video041_000245.jpg"
+  },
+  {
+    "image": "video008_frame_000279.jpg",
+    "detected_instances": 2,
+    "predicted_masks": 2,
+    "output": "test_01_video008_frame_000279.jpg"
+  },
+  {
+    "image": "video048_000163.png",
+    "detected_instances": 2,
+    "predicted_masks": 2,
+    "output": "test_02_video048_000163.jpg"
+  },
+  {
+    "image": "video008_frame_000538.jpg",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_03_video008_frame_000538.jpg"
+  },
+  {
+    "image": "video015_frame_000205.jpg",
+    "detected_instances": 3,
+    "predicted_masks": 3,
+    "output": "test_04_video015_frame_000205.jpg"
+  },
+  {
+    "image": "video002_frame_000279.jpg",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_05_video002_frame_000279.jpg"
+  },
+  {
+    "image": "video041_000207.png",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_06_video041_000207.jpg"
+  },
+  {
+    "image": "video002_frame_000312.jpg",
+    "detected_instances": 0,
+    "predicted_masks": 0,
+    "output": "test_07_video002_frame_000312.jpg"
+  },
+  {
+    "image": "video041_000299.png",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_08_video041_000299.jpg"
+  },
+  {
+    "image": "video048_000073.png",
+    "detected_instances": 3,
+    "predicted_masks": 3,
+    "output": "test_09_video048_000073.jpg"
+  },
+  {
+    "image": "video041_000294.png",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_10_video041_000294.jpg"
+  },
+  {
+    "image": "video008_frame_000369.jpg",
+    "detected_instances": 1,
+    "predicted_masks": 1,
+    "output": "test_11_video008_frame_000369.jpg"
+  }
+]

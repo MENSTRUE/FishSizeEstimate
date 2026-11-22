@@ -1,0 +1,89 @@
+{
+  "dataset_root": "/kaggle/input/datasets/wafabila/sfishtrack-dataset",
+  "splits": {
+    "train": {
+      "images": 13178,
+      "labels": 13178,
+      "instances": 49197,
+      "empty_labels": 229,
+      "video_count": 38
+    },
+    "val": {
+      "images": 2668,
+      "labels": 2668,
+      "instances": 12574,
+      "empty_labels": 24,
+      "video_count": 8
+    },
+    "test": {
+      "images": 3512,
+      "labels": 3512,
+      "instances": 11571,
+      "empty_labels": 46,
+      "video_count": 8
+    }
+  },
+  "video_groups": {
+    "train": [
+      "video001",
+      "video004",
+      "video005",
+      "video010",
+      "video011",
+      "video012",
+      "video013",
+      "video014",
+      "video017",
+      "video019",
+      "video020",
+      "video021",
+      "video022",
+      "video023",
+      "video024",
+      "video025",
+      "video026",
+      "video027",
+      "video029",
+      "video030",
+      "video031",
+      "video032",
+      "video033",
+      "video034",
+      "video036",
+      "video037",
+      "video039",
+      "video040",
+      "video042",
+      "video043",
+      "video045",
+      "video046",
+      "video047",
+      "video049",
+      "video050",
+      "video051",
+      "video053",
+      "video054"
+    ],
+    "val": [
+      "video003",
+      "video006",
+      "video007",
+      "video028",
+      "video035",
+      "video038",
+      "video044",
+      "video052"
+    ],
+    "test": [
+      "video002",
+      "video008",
+      "video009",
+      "video015",
+      "video016",
+      "video018",
+      "video041",
+      "video048"
+    ]
+  },
+  "problems": []
+}

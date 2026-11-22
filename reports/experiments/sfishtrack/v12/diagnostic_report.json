@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "task": "streaming sampled fish instance-segmentation diagnostics; NO TRAINING",
+  "sampled_validation_scores_NOT_official_mAP": {
+    "0.15": {
+      "tp": 30,
+      "fp": 18,
+      "fn": 59,
+      "precision": 0.625,
+      "recall": 0.33708,
+      "f1": 0.43796
+    },
+    "0.25": {
+      "tp": 25,
+      "fp": 7,
+      "fn": 64,
+      "precision": 0.78125,
+      "recall": 0.2809,
+      "f1": 0.41322
+    },
+    "0.4": {
+      "tp": 14,
+      "fp": 2,
+      "fn": 75,
+      "precision": 0.875,
+      "recall": 0.1573,
+      "f1": 0.26667
+    }
+  },
+  "sampled_test_scores_NOT_official_mAP": {
+    "tp": 28,
+    "fp": 16,
+    "fn": 36,
+    "precision": 0.63636,
+    "recall": 0.4375,
+    "f1": 0.51852
+  },
+  "selected_confidence_on_validation": 0.15,
+  "v11_official_heldout_metrics": {
+    "mask_map50_95": 0.17110140324923565,
+    "mask_map50": 0.42511630578254167,
+    "box_map50_95": 0.1994473456564248,
+    "box_map50": 0.4533615584070634
+  },
+  "dataset": "/kaggle/input/datasets/wafabila/sfishtrack-dataset",
+  "weights": "/kaggle/input/datasets/wafabila/output-v11/models/best_fish_segmenter.pt",
+  "weights_sha256": "151cb7b5c241d7bdc3783487c95c5c444af8d5fc9c53d480d98c59863c99bf65",
+  "settings": {
+    "samples_per_video_per_split": 2,
+    "imgsz": 384,
+    "raster": 320,
+    "match_iou": 0.5,
+    "max_det": 60,
+    "device": "cpu",
+    "seed": 42
+  },
+  "failed_samples": [],
+  "limitations": [
+    "Sampled results are not COCO mAP, do not replace V11 official test results",
+    "Previously evaluated test used for exploratory diagnosis, not fresh held-out validation",
+    "Masks and GT rasterized to square 320x320; thin detail and precise IoU can differ",
+    "max_det may truncate very crowded scenes",
+    "Dataset conversion excluded 4174 source frames",
+    "No fish length in centimeters or calibrated stereo measured"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "evaluated",
+  "task": "fish instance segmentation (not physical measurement)",
+  "source_dataset": "SFISHTRACK YOLO converted labels",
+  "dataset_root": "/kaggle/input/datasets/wafabila/sfishtrack-dataset",
+  "dataset_splits": {
+    "train": {
+      "images": 13178,
+      "labels": 13178,
+      "instances": 49197,
+      "empty_labels": 229,
+      "video_count": 38
+    },
+    "val": {
+      "images": 2668,
+      "labels": 2668,
+      "instances": 12574,
+      "empty_labels": 24,
+      "video_count": 8
+    },
+    "test": {
+      "images": 3512,
+      "labels": 3512,
+      "instances": 11571,
+      "empty_labels": 46,
+      "video_count": 8
+    }
+  },
+  "selection": "validation mask mAP50-95",
+  "champion_weights": "/kaggle/working/fishsizeestimate_sfishtrack_v11/training/baseline_yolo11n_seg/weights/best.pt",
+  "validation_metrics": {
+    "mask_map50_95": 0.08379104304083347,
+    "mask_map50": 0.21376420994794942,
+    "box_map50_95": 0.1278858557097619,
+    "box_map50": 0.2442645378721247
+  },
+  "heldout_test_metrics": {
+    "mask_map50_95": 0.17110140324923565,
+    "mask_map50": 0.42511630578254167,
+    "box_map50_95": 0.1994473456564248,
+    "box_map50": 0.4533615584070634
+  },
+  "limitations": [
+    "YOLO polygon labels approximate original COCO RLE masks",
+    "4,174 original frames excluded during local export due to conversion failures",
+    "Video-disjoint split; not verified fish-identity-disjoint across videos",
+    "No fish lengths in centimetres are predicted or evaluated",
+    "Results may not transfer to original stereo footage without domain adaptation"
+  ]
+}

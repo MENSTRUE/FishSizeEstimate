@@ -1,0 +1,74 @@
+[
+  {
+    "split": "train",
+    "image": "video030_000069.png",
+    "instances": 2,
+    "overlay": "train_00.png"
+  },
+  {
+    "split": "train",
+    "image": "video010_frame_000004.jpg",
+    "instances": 2,
+    "overlay": "train_01.png"
+  },
+  {
+    "split": "train",
+    "image": "video037_000177.png",
+    "instances": 1,
+    "overlay": "train_02.png"
+  },
+  {
+    "split": "train",
+    "image": "video043_000438.png",
+    "instances": 4,
+    "overlay": "train_03.png"
+  },
+  {
+    "split": "val",
+    "image": "video007_frame_000054.jpg",
+    "instances": 1,
+    "overlay": "val_00.png"
+  },
+  {
+    "split": "val",
+    "image": "video028_000321.png",
+    "instances": 2,
+    "overlay": "val_01.png"
+  },
+  {
+    "split": "val",
+    "image": "video038_000240.png",
+    "instances": 2,
+    "overlay": "val_02.png"
+  },
+  {
+    "split": "val",
+    "image": "video006_frame_000517.jpg",
+    "instances": 5,
+    "overlay": "val_03.png"
+  },
+  {
+    "split": "test",
+    "image": "video002_frame_000312.jpg",
+    "instances": 3,
+    "overlay": "test_00.png"
+  },
+  {
+    "split": "test",
+    "image": "video009_frame_000516.jpg",
+    "instances": 2,
+    "overlay": "test_01.png"
+  },
+  {
+    "split": "test",
+    "image": "video002_frame_000163.jpg",
+    "instances": 4,
+    "overlay": "test_02.png"
+  },
+  {
+    "split": "test",
+    "image": "video041_000010.png",
+    "instances": 1,
+    "overlay": "test_03.png"
+  }
+]

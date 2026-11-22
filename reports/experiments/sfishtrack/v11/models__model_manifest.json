@@ -1,0 +1,16 @@
+{
+  "task": "fish instance segmentation",
+  "framework": "ultralytics",
+  "ultralytics_version": "8.4.216",
+  "model_file": "best_fish_segmenter.pt",
+  "sha256": "151cb7b5c241d7bdc3783487c95c5c444af8d5fc9c53d480d98c59863c99bf65",
+  "classes": [
+    "fish"
+  ],
+  "input_imgsz": 512,
+  "confidence_example": 0.25,
+  "validation_mask_map50_95": 0.08379104304083347,
+  "heldout_test_mask_map50_95": 0.17110140324923565,
+  "does_predict_physical_length_cm": false,
+  "provenance": "trained by this notebook from SFISHTRACK converted segmentation annotations"
+}

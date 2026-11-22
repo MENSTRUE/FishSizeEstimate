@@ -1,0 +1,12 @@
+{
+  "seed": 42,
+  "model": "yolo11n-seg.pt",
+  "second_model": null,
+  "epochs": 30,
+  "imgsz": 512,
+  "batch": 16,
+  "patience": 10,
+  "input_path": "/kaggle/input/datasets/wafabila/sfishtrack-dataset",
+  "torch_version": "2.11.0+cu130",
+  "gpu": "Tesla T4"
+}

@@ -1,0 +1,15 @@
+{
+  "v11_report_path": "/kaggle/input/datasets/wafabila/output-v11/heldout_test_report.json",
+  "validation_metrics": {
+    "mask_map50_95": 0.08379104304083347,
+    "mask_map50": 0.21376420994794942,
+    "box_map50_95": 0.1278858557097619,
+    "box_map50": 0.2442645378721247
+  },
+  "heldout_test_metrics": {
+    "mask_map50_95": 0.17110140324923565,
+    "mask_map50": 0.42511630578254167,
+    "box_map50_95": 0.1994473456564248,
+    "box_map50": 0.4533615584070634
+  }
+}

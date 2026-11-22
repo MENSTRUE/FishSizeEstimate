@@ -1,0 +1,17 @@
+split,video,image,gt,pred,tp,fp,fn,threshold,inference_seconds
+test,video002,video002_frame_000229.jpg,4,0,0,0,4,0.15,0.15
+test,video002,video002_frame_000086.jpg,3,1,1,0,2,0.15,0.22
+test,video008,video008_frame_000470.jpg,1,1,1,0,0,0.15,0.18
+test,video008,video008_frame_000023.jpg,1,1,1,0,0,0.15,0.19
+test,video009,video009_frame_000139.jpg,4,0,0,0,4,0.15,0.17
+test,video009,video009_frame_000307.jpg,2,2,1,1,1,0.15,0.21
+test,video015,video015_frame_000020.jpg,2,0,0,0,2,0.15,0.16
+test,video015,video015_frame_000315.jpg,7,3,0,3,7,0.15,0.19
+test,video016,video016_frame_000005.jpg,7,5,4,1,3,0.15,0.17
+test,video016,video016_frame_000311.jpg,7,4,0,4,7,0.15,0.24
+test,video018,video018_frame_000105.jpg,9,10,9,1,0,0.15,0.19
+test,video018,video018_frame_000140.jpg,8,9,4,5,4,0.15,0.26
+test,video041,video041_000436.png,3,4,3,1,0,0.15,0.2
+test,video041,video041_000276.png,0,0,0,0,0,0.15,0.19
+test,video048,video048_000304.png,3,2,2,0,1,0.15,0.24
+test,video048,video048_000161.png,3,2,2,0,1,0.15,0.22

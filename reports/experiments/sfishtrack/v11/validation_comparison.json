@@ -1,0 +1,12 @@
+{
+  "candidate_metrics": {
+    "/kaggle/working/fishsizeestimate_sfishtrack_v11/training/baseline_yolo11n_seg/weights/best.pt": {
+      "mask_map50_95": 0.08379104304083347,
+      "mask_map50": 0.21376420994794942,
+      "box_map50_95": 0.1278858557097619,
+      "box_map50": 0.2442645378721247
+    }
+  },
+  "champion": "/kaggle/working/fishsizeestimate_sfishtrack_v11/training/baseline_yolo11n_seg/weights/best.pt",
+  "selection_criterion": "validation mask mAP50-95 only"
+}

@@ -1,0 +1,228 @@
+"""Read-only research dashboard API + exploratory image ROI proposals.
+
+IMPORTANT: This is NOT a calibrated fish-length-in-centimetres prediction endpoint.
+"""
+from __future__ import annotations
+
+import csv
+import io
+import json
+import os
+import re
+from functools import lru_cache
+from pathlib import Path
+from typing import Any
+
+import cv2
+import numpy as np
+from fastapi import FastAPI, File, HTTPException, Query, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from PIL import Image, ImageOps, UnidentifiedImageError
+from pydantic import BaseModel
+
+# Repo layout: root/backend/app/main.py
+REPO_ROOT = Path(__file__).resolve().parents[2]
+REPORT_ROOT = Path(os.environ.get('FISH_REPORT_DIR', str(REPO_ROOT / 'reports'))).resolve()
+ASSET_ROOT = Path(os.environ.get('FISH_ASSET_DIR', str(REPO_ROOT / 'assets'))).resolve()
+MAX_UPLOAD_BYTES = 8 * 1024 * 1024
+MAX_PIXELS = 18_000_000
+IMAGE_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.webp'}
+
+app = FastAPI(title='FishSizeEstimate Research API', version='1.0.0', description='Honest experiment evidence, stereo diagnostics, and exploratory segmentation proposals.')
+allowed = [v.strip() for v in os.getenv('FISH_CORS_ORIGINS','http://localhost:5173,http://127.0.0.1:5173').split(',') if v.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=allowed, allow_methods=['GET', 'POST'], allow_headers=['*'])
+
+
+def _data_files(directory: Path, suffix: str) -> list[Path]:
+    if not directory.exists():
+        return []
+    return [p for p in directory.rglob('*') if p.is_file() and p.suffix.lower() == suffix and p.stat().st_size < 8 * 1024 * 1024]
+
+
+def _find_report(basename: str) -> Path | None:
+    # Prefer newest, so a regenerated report supersedes an older run.
+    matches = [p for p in _data_files(REPORT_ROOT, '.json') if p.name == basename]
+    return max(matches, key=lambda p: p.stat().st_mtime) if matches else None
+
+
+def _load_json(name: str) -> dict[str, Any] | None:
+    p = _find_report(name)
+    if p is None:
+        return None
+    try:
+        obj = json.loads(p.read_text(encoding='utf-8-sig'))
+        return obj if isinstance(obj, dict) else None
+    except (OSError, ValueError):
+        return None
+
+
+def _find_csv(basename: str) -> Path | None:
+    matches = [p for p in _data_files(REPORT_ROOT, '.csv') if p.name == basename]
+    return max(matches, key=lambda p:p.stat().st_mtime) if matches else None
+
+
+def _read_csv(name: str, max_rows: int = 1000) -> list[dict[str,str]]:
+    path = _find_csv(name)
+    if path is None:
+        return []
+    try:
+        with path.open('r',encoding='utf-8-sig',newline='') as f:
+            return [r for i,r in enumerate(csv.DictReader(f)) if i < max_rows]
+    except (OSError, UnicodeError, csv.Error):
+        return []
+
+
+def _int(value: Any, default: int = 0) -> int:
+    try: return int(value)
+    except (TypeError, ValueError, OverflowError): return default
+
+
+@app.get('/api/v1/health')
+def health():
+    return {'status':'ok','mode':'research','metric_length_model_ready':False,'report_directory_exists':REPORT_ROOT.is_dir()}
+
+
+@app.get('/api/v1/overview')
+def overview():
+    training = _load_json('training_report.json') or {}
+    readiness = _load_json('FINAL_STATUS.json') or _load_json('research_readiness_v8.json') or {}
+    coverage = _read_csv('all_bag_coverage.csv')
+    # Source-backed historical published V8 run, not a live value when no report exists.
+    has_report = bool(training)
+    frames = _int(training.get('trained_images')) if has_report else None
+    steps = _int(training.get('optimizer_steps')) if has_report else None
+    bags = _int(training.get('fully_traversed_bags')) if has_report else None
+    return {
+      'project':'FishSizeEstimate',
+      'subtitle':'Underwater stereo vision · reproducible representation learning',
+      'status':'RESEARCH_PROTOTYPE',
+      'source':'local_training_report' if has_report else 'no_local_report',
+      'stats':{'recordings':bags,'trained_images':frames,'optimizer_steps':steps,'stereo_pairs_in_recent_investigation':None},
+      'verified_metric_length':False,
+      'length_mae_cm':None,'length_rmse_cm':None,
+      'coverage_count':len(coverage),
+      'readiness':readiness.get('readiness') or {},
+      'limitations':[
+        'The trained encoder learns visual representations, not calibrated fish length.',
+        'Stereo baseline physical units and paired head/tail landmarks remain unverified.',
+        'No independent fish-level centimetre MAE or RMSE is available.'
+      ]
+    }
+
+
+@app.get('/api/v1/training')
+def training():
+    rows=_read_csv('train_steps.csv',max_rows=10000)
+    points=[]
+    for r in rows:
+        try:
+            step=int(r.get('step',''))
+            loss=float(r.get('loss',''))
+            if np.isfinite(loss): points.append({'step':step,'loss':round(loss,5)})
+        except (ValueError,TypeError): pass
+    report=_load_json('training_report.json')
+    return {'report':report,'loss_points':points,'status':'measured' if report else 'no_training_report'}
+
+
+@app.get('/api/v1/recordings')
+def recordings():
+    rows=_read_csv('all_bag_coverage.csv')
+    return {'total':len(rows),'rows':[
+        {'bag':r.get('bag',''), 'dataset':r.get('dataset',''), 'status':r.get('status',''),
+         'trained_images':_int(r.get('trained_images')), 'decode_failures':_int(r.get('decode_failures'))}
+        for r in rows
+    ]}
+
+
+@app.get('/api/v1/artifacts')
+def artifacts():
+    allowed_ext={'.json','.csv','.md','.txt'}
+    if not REPORT_ROOT.exists(): return {'items':[]}
+    items=[]
+    for p in REPORT_ROOT.rglob('*'):
+        if p.is_file() and p.suffix.lower() in allowed_ext and p.stat().st_size < 8*1024*1024:
+            items.append({'name':p.name,'group':str(p.parent.relative_to(REPORT_ROOT)).replace('\\','/'), 'size_kb':round(p.stat().st_size/1024,1)})
+    return {'items':sorted(items,key=lambda x:(x['group'],x['name']))[:500]}
+
+
+def _images() -> list[Path]:
+    if not ASSET_ROOT.exists(): return []
+    return sorted((p for p in ASSET_ROOT.rglob('*')
+                   if p.is_file() and p.suffix.lower() in IMAGE_EXTENSIONS and p.stat().st_size < 12*1024*1024),key=lambda p:str(p))[:300]
+
+
+@app.get('/api/v1/gallery')
+def gallery(limit:int=Query(36,ge=1,le=100)):
+    files=_images()
+    return {'total':len(files),'items':[{'id':i,'name':p.name,'category':p.parent.name,'url':f'/api/v1/gallery/{i}'} for i,p in enumerate(files[:limit])]}
+
+
+@app.get('/api/v1/gallery/{image_id}')
+def image_file(image_id:int):
+    files=_images()
+    if image_id < 0 or image_id >= len(files): raise HTTPException(404,'Image not found')
+    return FileResponse(files[image_id])
+
+
+class ROI(BaseModel):
+    bbox: list[int]
+    endpoints: list[list[int]]
+    area_ratio: float
+    method: str='contour_candidate'
+
+
+@app.post('/api/v1/analyze')
+async def analyze(image: UploadFile = File(...)):
+    """Return an exploratory 2D foreground candidate, NEVER a fish identification or cm estimate."""
+    if image.content_type not in ('image/png','image/jpeg','image/webp'):
+        raise HTTPException(415,'Only PNG, JPEG, and WebP images are allowed')
+    data = await image.read(MAX_UPLOAD_BYTES+1)
+    await image.close()
+    if not data or len(data) > MAX_UPLOAD_BYTES:
+        raise HTTPException(413,'Image is empty or exceeds 8 MB')
+    try:
+        with Image.open(io.BytesIO(data)) as img:
+            img=ImageOps.exif_transpose(img)
+            if img.width*img.height > MAX_PIXELS:
+                raise HTTPException(413,'Image dimensions too large')
+            arr=np.asarray(img.convert('RGB'))
+    except (UnidentifiedImageError,OSError,ValueError):
+        raise HTTPException(422,'Could not decode image')
+    bgr=cv2.cvtColor(arr,cv2.COLOR_RGB2BGR)
+    h,w=bgr.shape[:2]
+    gray=cv2.cvtColor(bgr,cv2.COLOR_BGR2GRAY)
+    gray=cv2.GaussianBlur(gray,(7,7),0)
+    # Otsu polarity is an exploratory heuristic; select the largest plausible non-border object.
+    _, mask=cv2.threshold(gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    proposals=[]
+    for binary in [mask,cv2.bitwise_not(mask)]:
+        cnts,_=cv2.findContours(binary,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+        for contour in cnts:
+            area=float(cv2.contourArea(contour))
+            x,y,bw,bh=cv2.boundingRect(contour)
+            frac=area/(h*w)
+            if not (0.005 <= frac <= 0.65) or bw<12 or bh<12:continue
+            if x<=1 and y<=1 and x+bw>=w-1 and y+bh>=h-1:continue
+            proposals.append((area,contour,(x,y,bw,bh),frac))
+    if not proposals:
+        return {'status':'NO_CANDIDATE','width':w,'height':h,'roi':None,'length_cm':None,'note':'No plausible foreground contour found. This is not a fish detector.'}
+    area,contour,(x,y,bw,bh),frac=max(proposals,key=lambda z:z[0])
+    pts=contour.reshape(-1,2).astype(np.float32)
+    center=pts.mean(axis=0)
+    centered=pts-center
+    if len(pts)>=3:
+        _,_,vt=np.linalg.svd(centered,full_matrices=False)
+        axis=vt[0]
+        projection=centered@axis
+        a=pts[int(np.argmin(projection))].round().astype(int).tolist()
+        b=pts[int(np.argmax(projection))].round().astype(int).tolist()
+    else:
+        a=[x,y+bh//2];b=[x+bw,y+bh//2]
+    return {'status':'CANDIDATE_ONLY','width':w,'height':h,
+            'roi':ROI(bbox=[x,y,bw,bh],endpoints=[a,b],area_ratio=round(frac,4)).model_dump(),
+            'length_cm':None,
+            'note':'Unverified contour endpoints. Not necessarily fish head/tail. No calibrated centimetre output.'}
+
+from fish_ml_router import router as fish_ml_router
+app.include_router(fish_ml_router)
